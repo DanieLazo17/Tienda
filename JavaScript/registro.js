@@ -1,5 +1,6 @@
 addEventListener("load", load);
-var NombreServidor = "/Aplicacion/Servidor/";
+//var NombreServidor = "https://servidoredi.herokuapp.com/";
+var NombreServidor = "/ServidorEDI/";
 
 function $(demo){
     return document.getElementById(demo);
