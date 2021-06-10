@@ -1,6 +1,6 @@
 addEventListener("load", load);
-//var NombreServidor = "https://servidoredi.herokuapp.com/";
-var NombreServidor = "/ServidorEDI/";
+var NombreServidor = "https://servidoredi.herokuapp.com/";
+//var NombreServidor = "/ServidorEDI/";
 
 function $(demo){
     return document.getElementById(demo);
@@ -103,15 +103,12 @@ function click(){
 
 function respuestaServidor(respuesta){
 
-    if(respuesta == "perfil.html"){
-        window.location.assign(NombreServidor + respuesta);
-    }
-    else{
-        $("usuario_nuevo").value = "";
-        $("contrasena_nueva").value = "";
-        $("contrasena_repetida").value = "";
-        $("demo").innerHTML = respuesta;
-    }
+    $("usuario_nuevo").value = "";
+    $("contrasena_nueva").value = "";
+    $("contrasena_repetida").value = "";
+    $("mensaje").style.color = 'green';
+    $("mensaje").innerHTML = respuesta;
+    
 }
 
 function enviarMensajeAlServidorPorPOST(servidor, funcionARealizar){
@@ -141,7 +138,9 @@ function enviarMensajeAlServidorPorPOST(servidor, funcionARealizar){
         }
     }
     //Definimos que estamos enviando
-    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+    //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.setRequestHeader("Content-type", "multipart/form-data");
+    //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
 
     //Envio el mensaje en el cuerpo del mensaje
     xmlhttp.send(datos);
