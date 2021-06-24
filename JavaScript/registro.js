@@ -1,5 +1,7 @@
 addEventListener("load", load);
-var NombreServidor = "https://servidoredi.herokuapp.com/";
+var NombreServidor = "https://servidordestino.herokuapp.com/";
+//var NombreServidor = "http://localhost:666/Registro/";
+//var NombreServidor = "https://servidoredi.herokuapp.com/";
 //var NombreServidor = "/ServidorEDI/";
 
 function $(demo){
@@ -17,18 +19,18 @@ function load(){
 }
 
 function change(){
-    validarUsuarioEnServidor(NombreServidor, respuestaDeValidacion);
+    validarUsuarioEnServidor(NombreServidor + "Nombre", respuestaDeValidacion);
 }
 
 function respuestaDeValidacion(respuesta){
 
-    if(respuesta){
+    if(respuesta == "Nombre de usuario no disponible"){
         $("mensaje").style.color = 'red';
-        $("mensaje").innerHTML = "Nombre de usuario duplicado";
+        $("mensaje").innerHTML = respuesta;
     }
     else{
         $("mensaje").style.color = 'green';
-        $("mensaje").innerHTML = "Nombre de usuario correcto";
+        $("mensaje").innerHTML = respuesta;
     }
 }
 
@@ -93,7 +95,7 @@ function click(){
     var contrasena_repetida = $("contrasena_repetida").value;
     
     if(contrasena_nueva == contrasena_repetida){
-        enviarMensajeAlServidorPorPOST(NombreServidor, respuestaServidor);
+        enviarMensajeAlServidorPorPOST(NombreServidor + "UsuarioNuevo", respuestaServidor);
     }
     else{
         $("mensaje").style.color = 'red';
@@ -139,8 +141,8 @@ function enviarMensajeAlServidorPorPOST(servidor, funcionARealizar){
     }
     //Definimos que estamos enviando
     //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.setRequestHeader("Content-type", "multipart/form-data");
-    //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+    //xmlhttp.setRequestHeader("Content-type", "multipart/form-data");
+    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
 
     //Envio el mensaje en el cuerpo del mensaje
     xmlhttp.send(datos);

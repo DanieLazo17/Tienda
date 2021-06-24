@@ -1,5 +1,7 @@
 addEventListener("load", load);
-var NombreServidor = "https://servidoredi.herokuapp.com/";
+var NombreServidor = "https://servidordestino.herokuapp.com/";
+//var NombreServidor = "http://localhost:666/Acceso/";
+//var NombreServidor = "https://servidoredi.herokuapp.com/";
 //var NombreServidor = "/ServidorEDI/";
 
 function $(demo){
@@ -82,8 +84,8 @@ function enviarMensajeAlServidorPorPOST(servidor, funcionARealizar){
 
     //Declaro un objeto del tipo formData
     var datos = new FormData();
-    datos.append("usuario",$("nombre_usuario").value);
-    datos.append("contra",$("contrasena").value);
+    datos.append("nombre",$("nombre_usuario").value);
+    datos.append("contrasena",$("contrasena").value);
 
     //Indico hacia donde va el mensaje
     xmlhttp.open("POST", servidor, true);
@@ -102,8 +104,8 @@ function enviarMensajeAlServidorPorPOST(servidor, funcionARealizar){
     }
     //Definimos que estamos enviando
     //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.setRequestHeader("Content-type", "multipart/form-data");
-    //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+    //xmlhttp.setRequestHeader("Content-type", "multipart/form-data");
+    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
 
     //Envio el mensaje en el cuerpo del mensaje
     xmlhttp.send(datos);
