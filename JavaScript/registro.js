@@ -141,8 +141,8 @@ function enviarMensajeAlServidorPorPOST(servidor, funcionARealizar){
     }
     //Definimos que estamos enviando
     //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    //xmlhttp.setRequestHeader("Content-type", "multipart/form-data");
-    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+    xmlhttp.setRequestHeader("Content-type", "multipart/form-data");
+    //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
 
     //Envio el mensaje en el cuerpo del mensaje
     xmlhttp.send(datos);
