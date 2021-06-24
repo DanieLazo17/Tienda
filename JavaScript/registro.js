@@ -19,7 +19,7 @@ function load(){
 }
 
 function change(){
-    validarUsuarioEnServidor(NombreServidor + "Registro/Nombre", respuestaDeValidacion);
+    validarUsuarioEnServidor(NombreServidor + "Nombre", respuestaDeValidacion);
 }
 
 function respuestaDeValidacion(respuesta){
@@ -59,7 +59,7 @@ function validarUsuarioEnServidor(servidor, funcionARealizar){
         }
     }
     //Definimos que estamos enviando
-    //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
 
     //Envio el mensaje en el cuerpo del mensaje
     xmlhttp.send(datos);
