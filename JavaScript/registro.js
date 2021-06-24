@@ -19,7 +19,7 @@ function load(){
 }
 
 function change(){
-    validarUsuarioEnServidor(NombreServidor + "Nombre", respuestaDeValidacion);
+    validarUsuarioEnServidor(NombreServidor + "Registro/Nombre", respuestaDeValidacion);
 }
 
 function respuestaDeValidacion(respuesta){
@@ -95,7 +95,7 @@ function click(){
     var contrasena_repetida = $("contrasena_repetida").value;
     
     if(contrasena_nueva == contrasena_repetida){
-        enviarMensajeAlServidorPorPOST(NombreServidor + "UsuarioNuevo", respuestaServidor);
+        enviarMensajeAlServidorPorPOST(NombreServidor + "Registro/UsuarioNuevo", respuestaServidor);
     }
     else{
         $("mensaje").style.color = 'red';
