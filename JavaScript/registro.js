@@ -1,5 +1,5 @@
 addEventListener("load", load);
-var NombreServidor = "https://servidordestino.herokuapp.com/";
+var NombreServidor = "https://servidordestino.herokuapp.com/Registro/";
 //var NombreServidor = "http://localhost:666/";
 //var NombreServidor = "https://servidoredi.herokuapp.com/";
 //var NombreServidor = "/ServidorEDI/";
@@ -19,7 +19,7 @@ function load(){
 }
 
 function change(){
-    validarUsuarioEnServidor(NombreServidor, respuestaDeValidacion);
+    validarUsuarioEnServidor(NombreServidor + "/Nombre", respuestaDeValidacion);
 }
 
 function respuestaDeValidacion(respuesta){
