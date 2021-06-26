@@ -19,7 +19,7 @@ function load(){
 }
 
 function change(){
-    validarUsuarioEnServidor(NombreServidor + "Nombre/", respuestaDeValidacion);
+    validarUsuarioEnServidor(NombreServidor, respuestaDeValidacion);
 }
 
 function respuestaDeValidacion(respuesta){
