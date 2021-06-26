@@ -13,12 +13,12 @@ function load(){
     document.getElementById('contrasena_nueva').addEventListener("keyup", validar);
     document.getElementById('contrasena_repetida').addEventListener("keyup", validar);
 
-    document.getElementById('usuario_nuevo').addEventListener("change", change);
+    document.getElementById('usuario_nuevo').addEventListener("change", buscarNombreUsuario);
 
     document.getElementById('boton_subir').addEventListener("click", click);
 }
 
-function change(){
+function buscarNombreUsuario(){
     validarUsuarioEnServidor(NombreServidor, respuestaDeValidacion);
 }
 
