@@ -40,8 +40,8 @@ function validarUsuarioEnServidor(servidor, funcionARealizar){
     var xmlhttp = new XMLHttpRequest();
 
     //Declaro un objeto del tipo formData
-    var datos = new FormData();
-    datos.append("usuarioNuevo",$("usuario_nuevo").value);
+    var datoDeForm = new FormData();
+    datoDeForm.append("usuarioNuevo",$("usuario_nuevo").value);
 
     //Indico hacia donde va el mensaje
     xmlhttp.open("POST", servidor, true);
@@ -62,7 +62,7 @@ function validarUsuarioEnServidor(servidor, funcionARealizar){
     xmlhttp.setRequestHeader("enctype", "multipart/form-data");
 
     //Envio el mensaje en el cuerpo del mensaje
-    xmlhttp.send(datos);
+    xmlhttp.send(datoDeForm);
 }
 
 function validar(){
