@@ -1,8 +1,10 @@
 addEventListener("load", load);
 var nombreServidor = "https://servidordestino.herokuapp.com/";
-//var NombreServidor = "http://localhost:666/";
-//var NombreServidor = "https://servidoredi.herokuapp.com/";
-//var NombreServidor = "/ServidorEDI/";
+
+//Revisado
+//var nombreServidor = "http://localhost:666/";
+//var nombreServidor = "https://servidoredi.herokuapp.com/";
+//var nombreServidor = "/ServidorEDI/";
 
 function $(demo){
     return document.getElementById(demo);
@@ -19,7 +21,7 @@ function load(){
 }
 
 function buscarNombreUsuario(){
-    validarUsuarioEnServidor(nombreServidor, respuestaDeValidacion);
+    validarUsuarioEnServidor(nombreServidor + "Registro", respuestaDeValidacion);
 }
 
 function respuestaDeValidacion(respuesta){

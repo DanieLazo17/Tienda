@@ -1,5 +1,7 @@
 addEventListener("load", load);
 var NombreServidor = "https://servidordestino.herokuapp.com/";
+
+//Revisado
 //var NombreServidor = "http://localhost:666/";
 //var NombreServidor = "https://servidoredi.herokuapp.com/";
 //var NombreServidor = "/ServidorEDI/";
