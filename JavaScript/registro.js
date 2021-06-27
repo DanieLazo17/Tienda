@@ -95,7 +95,7 @@ function click(){
     var contrasena_repetida = $("contrasena_repetida").value;
     
     if(contrasena_nueva == contrasena_repetida){
-        enviarMensajeAlServidorPorPOST(NombreServidor + "Registro/UsuarioNuevo", respuestaServidor);
+        enviarMensajeAlServidorPorPOST(nombreServidor + "Registro/UsuarioNuevo", respuestaServidor);
     }
     else{
         $("mensaje").style.color = 'red';
