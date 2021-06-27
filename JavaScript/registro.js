@@ -19,7 +19,7 @@ function load(){
 }
 
 function buscarNombreUsuario(){
-    validarUsuarioEnServidor(nombreServidor, respuestaDeValidacion);
+    validarUsuarioEnServidor(nombreServidor + "Registro", respuestaDeValidacion);
 }
 
 function respuestaDeValidacion(respuesta){
