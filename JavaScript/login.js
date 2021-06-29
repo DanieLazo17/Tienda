@@ -40,7 +40,7 @@ function click(){
     //var contrasena = $("contrasena").value;
     
     enviarMensajeAlServidorPorPOST(NombreServidor, respuestaServidor);
-    //enviarMensajeAlServidorPorGET(NombreServidor + "?nombre_usuario=" + nombre_usuario + "&contrasena=" + contrasena, respuestaServidor);
+    //enviarMensajeAlServidorPorGET(NombreServidor, respuestaServidor);
 }
 
 function respuestaServidor(respuesta){
