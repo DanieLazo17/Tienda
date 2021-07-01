@@ -1,6 +1,6 @@
 function contarLetras(){
 
-    var nombre = document.getElementById('nombre_usuario').value;
+    var nombre = document.getElementById('txtUsuario').value;
 
     var consonantes = new RegExp(/^[bcdfghjklmnñpqrstvwxyz]*$/);
     var vocales = new RegExp(/^[aeiou]*$/);
@@ -24,6 +24,6 @@ function contarLetras(){
     //return document.getElementById('contador').innerHTML = 'Número de vocales en el nombre: ' + contadorVocales + '<br>Número de consonantes en el nombre: ' +contadorConsonantes;
 }
 
-var boton_ingreso = document.getElementById('boton_ingreso');
+var boton_ingreso = document.getElementById('btnIngreso');
 
 boton_ingreso.onclick = contarLetras;

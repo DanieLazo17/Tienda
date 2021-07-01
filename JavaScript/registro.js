@@ -11,13 +11,13 @@ function $(demo){
 }
 
 function load(){
-    document.getElementById('usuario_nuevo').addEventListener("keyup", validar);
-    document.getElementById('contrasena_nueva').addEventListener("keyup", validar);
-    document.getElementById('contrasena_repetida').addEventListener("keyup", validar);
+    document.getElementById('txtUsuarioNuevo').addEventListener("keyup", validar);
+    document.getElementById('txtContrasenaNueva').addEventListener("keyup", validar);
+    document.getElementById('txtContrasenaNuevaDup').addEventListener("keyup", validar);
 
-    document.getElementById('usuario_nuevo').addEventListener("change", buscarNombreUsuario);
+    document.getElementById('txtUsuarioNuevo').addEventListener("change", buscarNombreUsuario);
 
-    document.getElementById('boton_subir').addEventListener("click", click);
+    document.getElementById('btnSubir').addEventListener("click", click);
 }
 
 function buscarNombreUsuario(){
@@ -29,8 +29,12 @@ function respuestaDeValidacion(respuesta){
     if(respuesta == "Nombre de usuario no disponible"){
         $("mensaje").style.color = 'red';
         $("mensaje").innerHTML = respuesta;
+        $("txtContrasenaNueva").disabled = true;
+        $("txtContrasenaNuevaDup").disabled = true;
     }
     else{
+        $("txtContrasenaNueva").disabled = false;
+        $("txtContrasenaNuevaDup").disabled = false;
         $("mensaje").style.color = 'green';
         $("mensaje").innerHTML = respuesta;
     }
@@ -43,7 +47,7 @@ function validarUsuarioEnServidor(servidor, funcionARealizar){
 
     //Declaro un objeto del tipo formData
     var datoDeForm = new FormData();
-    datoDeForm.append("usuarioNuevo",$("usuario_nuevo").value);
+    datoDeForm.append("usuarioNuevo",$("txtUsuarioNuevo").value);
 
     //Indico hacia donde va el mensaje
     xmlhttp.open("POST", servidor, true);
@@ -68,9 +72,9 @@ function validarUsuarioEnServidor(servidor, funcionARealizar){
 }
 
 function validar(){
-    var usuario_nuevo = document.getElementById('usuario_nuevo').value.length;
-    var contrasena_nueva = document.getElementById('contrasena_nueva').value;
-    var contrasena_repetida = document.getElementById('contrasena_repetida').value;
+    var usuario_nuevo = document.getElementById('txtUsuarioNuevo').value.length;
+    var contrasena_nueva = document.getElementById('txtContrasenaNueva').value;
+    var contrasena_repetida = document.getElementById('txtContrasenaNuevaDup').value;
 
     var patt = new RegExp(/(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$/);
 
@@ -84,17 +88,17 @@ function validar(){
     }
 
     if( usuario_nuevo >=6 && resultado_contrasena && resultado_contrasena_repetida ){
-        $("boton_subir").disabled = false;
+        $("btnSubir").disabled = false;
     }else{
-        $("boton_subir").disabled = true;
+        $("btnSubir").disabled = true;
     }
 }
 
 function click(){
-    $("boton_subir").disabled = true;
+    $("btnSubir").disabled = true;
     
-    var contrasena_nueva = $("contrasena_nueva").value;
-    var contrasena_repetida = $("contrasena_repetida").value;
+    var contrasena_nueva = $("txtContrasenaNueva").value;
+    var contrasena_repetida = $("txtContrasenaNuevaDup").value;
     
     if(contrasena_nueva == contrasena_repetida){
         enviarMensajeAlServidorPorPOST(nombreServidor + "Registro/UsuarioNuevo", respuestaServidor);
@@ -107,9 +111,9 @@ function click(){
 
 function respuestaServidor(respuesta){
 
-    $("usuario_nuevo").value = "";
-    $("contrasena_nueva").value = "";
-    $("contrasena_repetida").value = "";
+    $("txtUsuarioNuevo").value = "";
+    $("txtContrasenaNueva").value = "";
+    $("txtContrasenaNuevaDup").value = "";
     $("mensaje").style.color = 'green';
     $("mensaje").innerHTML = respuesta;
     
@@ -122,9 +126,9 @@ function enviarMensajeAlServidorPorPOST(servidor, funcionARealizar){
 
     //Declaro un objeto del tipo formData
     var datos = new FormData();
-    datos.append("nuevoUsuario",$("usuario_nuevo").value);
-    datos.append("nuevaContra",$("contrasena_nueva").value);
-    datos.append("nuevaFoto",$("foto_perfil").files[0]);
+    datos.append("nuevoUsuario",$("txtUsuarioNuevo").value);
+    datos.append("nuevaContra",$("txtContrasenaNueva").value);
+    datos.append("nuevaFoto",$("fileFoto").files[0]);
 
     //Indico hacia donde va el mensaje
     xmlhttp.open("POST", servidor, true);

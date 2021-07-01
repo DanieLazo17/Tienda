@@ -11,30 +11,30 @@ function $(demo){
 }
 
 function load(){
-    document.getElementById('nombre_usuario').addEventListener("keyup", validar);
-    document.getElementById('contrasena').addEventListener("keyup", validar);
+    document.getElementById('txtUsuario').addEventListener("keyup", validar);
+    document.getElementById('txtContrasena').addEventListener("keyup", validar);
 
-    document.getElementById('boton_ingreso').addEventListener("click", click);
+    document.getElementById('btnIngreso').addEventListener("click", click);
 }
 
 function validar(){
 
-    var nombre_usuario = document.getElementById('nombre_usuario').value.length;
-    var contrasena = document.getElementById('contrasena').value;
+    var nombre_usuario = document.getElementById('txtUsuario').value.length;
+    var contrasena = document.getElementById('txtContrasena').value;
 
     var patt = new RegExp(/(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$/);
 
     var res = patt.test(contrasena);
 
     if( nombre_usuario >=6 && res ){
-        $('boton_ingreso').disabled = false;
+        $('btnIngreso').disabled = false;
     }else{
-        $('boton_ingreso').disabled = true;
+        $('btnIngreso').disabled = true;
     }
 }
 
 function click(){
-    $("boton_ingreso").disabled = true;
+    $("btnIngreso").disabled = true;
     
     //var nombre_usuario = $("nombre_usuario").value;
     //var contrasena = $("contrasena").value;
@@ -49,8 +49,8 @@ function respuestaServidor(respuesta){
         window.location.assign(NombreServidor + respuesta);
     }
     else{
-        $("nombre_usuario").value = "";
-        $("contrasena").value = "";
+        $("txtUsuario").value = "";
+        $("txtContrasena").value = "";
         $("demo").innerHTML = respuesta;
     }
 }
@@ -86,8 +86,8 @@ function enviarMensajeAlServidorPorPOST(servidor, funcionARealizar){
 
     //Declaro un objeto del tipo formData
     var datos = new FormData();
-    datos.append("nombre",$("nombre_usuario").value);
-    datos.append("contrasena",$("contrasena").value);
+    datos.append("nombre",$("txtUsuario").value);
+    datos.append("contrasena",$("txtContrasena").value);
 
     //Indico hacia donde va el mensaje
     xmlhttp.open("POST", servidor, true);
