@@ -26,7 +26,7 @@ function buscarNombreUsuario(){
 
 function respuestaDeValidacion(respuesta){
 
-    if(respuesta == "Nombre de usuario no disponible"){
+    if(respuesta == "Nombre de usuario duplicado"){
         $("mensaje").style.color = 'red';
         $("mensaje").innerHTML = respuesta;
         $("txtContrasenaNueva").disabled = true;
