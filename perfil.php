@@ -1,3 +1,15 @@
+<?php
+    /*
+        Iniciar una nueva sesión o reanudar la existente
+    */
+    session_start();
+
+    if( !isset($_SESSION['usuario'])){
+      header('Location:login.html');
+    }
+
+?>
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -12,6 +24,7 @@
   </head>
   <body>
     <h1>Bienvenido!</h1>
+    <a href="cerrar.php">Cerrar Sesión</a>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
