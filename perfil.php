@@ -12,7 +12,11 @@
     <script type="text/javascript" src="JavaScript/perfil.js"></script>
   </head>
   <body>
-    <h1>Bienvenido!</h1>
+    <div class="container">
+      <div class="row">
+        <h1>Bienvenido!</h1>
+      </div>
+    </div>
 
     <div class="container">
       <div class="row">
@@ -24,6 +28,12 @@
           <select id="destino" class="col-md-4">
               
           </select>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        
       </div>
     </div>
 

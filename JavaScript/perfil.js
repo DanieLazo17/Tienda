@@ -8,6 +8,12 @@ function $(demo){
 
 function load(){
     enviarMensajeAlServidorPorGET(NombreServidor + "Destino", cargarOpcionesDestino);
+    $("destino").addEventListener("change", cambiarDestino);
+}
+
+function cambiarDestino() {
+    var valorProvincia = $("provincia").value;
+    enviarMensajeAlServidor(servidor + "/Departamento/" + valorProvincia,cargarOpcionesLocalidad);
 }
 
 function cargarOpcionesDestino(valor) {
@@ -16,10 +22,21 @@ function cargarOpcionesDestino(valor) {
     var opciones = ['<option value=0>Seleccione un destino</option>'];
 
     destinos.forEach(element => {
-        opciones.push('<option value="' + element.valor + '">' + element.nombre + '</option>');
+        opciones.push('<option value="' + element.idDestino + '">' + element.nombre + '</option>');
     });
 
     $("destino").innerHTML = opciones;
+}
+
+function cargarOpcionesLocalidad(valor) {
+    var localidades = JSON.parse(valor);
+    localidades.sort(function (x, y) { return x.nombre.localeCompare(y.nombre) });
+    var opciones = []
+
+    localidades.forEach(element => {
+        opciones.push('<option value="' + element.valor + '">' + element.nombre + '</option>');
+    });
+    $("localidad").innerHTML = opciones;
 }
 
 function enviarMensajeAlServidorPorGET(servidor, funcionARealizar){
