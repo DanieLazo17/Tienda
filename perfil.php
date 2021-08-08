@@ -2,7 +2,6 @@
     /*
         Iniciar una nueva sesión o reanudar la existente
     */
-    session_start();
 
     if( !isset($_SESSION['admin']) ){
       die();
