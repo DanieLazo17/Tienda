@@ -1,5 +1,6 @@
 addEventListener("load", load);
 var NombreServidor = "https://servidordestino.herokuapp.com/";
+var ServidorAplicacion = "https://appdestino.herokuapp.com/";
 
 //Revisado
 //var NombreServidor = "http://localhost:666/";
@@ -46,7 +47,7 @@ function click(){
 function respuestaServidor(respuesta){
 
     if(respuesta == "perfil.html"){
-        window.location.assign(NombreServidor + respuesta);
+        window.location.assign(ServidorAplicacion + respuesta);
     }
     else{
         $("txtUsuario").value = "";
