@@ -46,7 +46,7 @@ function click(){
 
 function respuestaServidor(respuesta){
 
-    if(respuesta == "perfil.html"){
+    if(respuesta == "perfil.php"){
         window.location.assign(ServidorAplicacion + respuesta);
     }
     else{
