@@ -4,7 +4,7 @@
     */
     session_start();
 
-    if( isset($_SESSION['admin']) ){
+    if( !isset($_SESSION['admin']) ){
       die();
     }
 
