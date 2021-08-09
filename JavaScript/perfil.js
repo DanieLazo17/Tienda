@@ -12,8 +12,8 @@ function load(){
 }
 
 function cambiarDestino() {
-    var valorProvincia = $("provincia").value;
-    enviarMensajeAlServidor(servidor + "/Departamento/" + valorProvincia,cargarOpcionesLocalidad);
+    var idDestino = $("destino").value;
+    enviarMensajeAlServidorPorGET(NombreServidor + "Mensaje" + idDestino,cargarMensajesDestinos);/*Continuar*/
 }
 
 function cargarOpcionesDestino(valor) {
@@ -28,7 +28,7 @@ function cargarOpcionesDestino(valor) {
     $("destino").innerHTML = opciones;
 }
 
-function cargarOpcionesLocalidad(valor) {
+function cargarMensajesDestinos(valor) {
     var localidades = JSON.parse(valor);
     localidades.sort(function (x, y) { return x.nombre.localeCompare(y.nombre) });
     var opciones = []
