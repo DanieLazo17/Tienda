@@ -32,8 +32,10 @@
     </div>
 
     <div class="container">
-      <div id="mensaje" class="row">
+      <div class="row">
+        <div id="mensaje" class="card text-white bg-dark mt-3 mb-3 col-md-4">
         
+        </div>
       </div>
     </div>
 
