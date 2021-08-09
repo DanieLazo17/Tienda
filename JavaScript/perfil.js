@@ -31,10 +31,9 @@ function cargarOpcionesDestino(valor) {
 function cargarMensajesDestinos(valor) {
 
     var mensajes = JSON.parse(valor);
-    var opciones = []
+    var opciones = [];
 
     mensajes.forEach(element => {
-        //opciones.push('<option value="' + element.valor + '">' + element.nombre + '</option>');
         opciones.push(
             `
             <div class="card text-white bg-dark mt-3 mb-3 col-md-4">
