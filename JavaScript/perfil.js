@@ -13,7 +13,7 @@ function load(){
 
 function cambiarDestino() {
     var idDestino = $("destino").value;
-    enviarMensajeAlServidorPorGET(NombreServidor + "Mensaje" + idDestino,cargarMensajesDestinos);/*Continuar*/
+    enviarMensajeAlServidorPorGET(NombreServidor + "Mensaje" + idDestino,cargarMensajesDestinos);
 }
 
 function cargarOpcionesDestino(valor) {
@@ -29,14 +29,25 @@ function cargarOpcionesDestino(valor) {
 }
 
 function cargarMensajesDestinos(valor) {
-    var localidades = JSON.parse(valor);
-    localidades.sort(function (x, y) { return x.nombre.localeCompare(y.nombre) });
+
+    var mensajes = JSON.parse(valor);
     var opciones = []
 
-    localidades.forEach(element => {
-        opciones.push('<option value="' + element.valor + '">' + element.nombre + '</option>');
+    mensajes.forEach(element => {
+        //opciones.push('<option value="' + element.valor + '">' + element.nombre + '</option>');
+        opciones.push(
+            `
+            <div class="card text-white bg-dark mb-3 col-md-4" style="max-width: 18rem;">
+                <div class="card-header">${element.usuario}</div>
+                <div class="card-body">
+                    <h5 class="card-title">${element.destino}</h5>
+                    <p class="card-text">${element.contenido}</p>
+                </div>
+            </div>
+            `
+        );
     });
-    $("localidad").innerHTML = opciones;
+    $("mensaje").innerHTML = opciones;
 }
 
 function enviarMensajeAlServidorPorGET(servidor, funcionARealizar){

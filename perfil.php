@@ -32,7 +32,7 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div id="mensaje" class="row">
         
       </div>
     </div>
