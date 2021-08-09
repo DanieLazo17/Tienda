@@ -36,7 +36,7 @@ function cargarMensajesDestinos(valor) {
     mensajes.forEach(element => {
         //opciones.push('<option value="' + element.valor + '">' + element.nombre + '</option>');
         opciones.push(
-            
+            `
             <div class="card text-white bg-dark mb-3 col-md-4" style="max-width: 18rem;">
                 <div class="card-header">${element.usuario}</div>
                 <div class="card-body">
@@ -44,7 +44,7 @@ function cargarMensajesDestinos(valor) {
                     <p class="card-text">${element.contenido}</p>
                 </div>
             </div>
-            
+            `
         );
     });
     $("mensaje").innerHTML = opciones;
