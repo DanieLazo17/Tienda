@@ -31,7 +31,8 @@ function cargarOpcionesDestino(valor) {
 function cargarMensajesDestinos(valor) {
 
     var mensajes = JSON.parse(valor);
-    var opciones = new Array();
+    //var opciones = new Array();
+    var opciones = [];
 
     mensajes.forEach(element => {
         opciones.push(
