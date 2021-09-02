@@ -35,7 +35,7 @@ function cargarMensajesDestinos(valor) {
 
     mensajes.forEach(element => {
         opciones.push(
-            '<div class="card text-white bg-dark mt-3 mb-3 col-md-4">' +
+            '<div class="card text-white bg-dark mt-3 mb-3 col-md-3">' +
                 '<div class="card-header">' + element.nombreDeUsuario + '</div>' +
                 '<div class="card-body">' + 
                     '<h5 class="card-title">' + element.nombreDeDestino + '</h5>' +
