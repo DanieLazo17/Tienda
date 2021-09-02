@@ -44,7 +44,7 @@ function cargarMensajesDestinos(valor) {
             '</div>'
         );
     });
-    $("mensaje").innerHTML = opciones;
+    $("mensaje").innerHTML = opciones.join(" ");
 }
 
 /*
