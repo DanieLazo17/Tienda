@@ -46,13 +46,17 @@ function click(){
 
 function respuestaServidor(respuesta){
 
-    if(respuesta == "perfil.php"){
-        window.location.assign(ServidorAplicacion + respuesta);
+    $("txtUsuario").value = "";
+    $("txtContrasena").value = "";
+
+    var objetoUsuario = JSON.parse(respuesta);
+
+    if(objetoUsuario['nombre'] == null){
+        $("respuesta").innerHTML="Correo o contraseña errónea";
     }
-    else{
-        $("txtUsuario").value = "";
-        $("txtContrasena").value = "";
-        $("demo").innerHTML = respuesta;
+
+    if(objetoUsuario['nombre'] != null){
+        $("respuesta").innerHTML="Acceso correcto";
     }
 }
 
