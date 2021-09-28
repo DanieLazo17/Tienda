@@ -21,7 +21,7 @@ function load(){
 }
 
 function buscarNombreUsuario(){
-    validarUsuarioEnServidor(nombreServidor + "Registro", respuestaDeValidacion);
+    validarUsuarioEnServidor(nombreServidor + "Usuario/Nuevo", respuestaDeValidacion);
 }
 
 function respuestaDeValidacion(respuesta){
@@ -101,7 +101,7 @@ function click(){
     var contrasena_repetida = $("txtContrasenaNuevaDup").value;
     
     if(contrasena_nueva == contrasena_repetida){
-        enviarMensajeAlServidorPorPOST(nombreServidor + "Registro/UsuarioNuevo", respuestaServidor);
+        enviarMensajeAlServidorPorPOST(nombreServidor + "Usuario/Registro", respuestaServidor);
     }
     else{
         $("mensaje").style.color = 'red';

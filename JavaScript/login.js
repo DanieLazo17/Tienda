@@ -40,7 +40,7 @@ function click(){
     //var nombre_usuario = $("nombre_usuario").value;
     //var contrasena = $("contrasena").value;
     
-    enviarMensajeAlServidorPorPOST(NombreServidor, respuestaServidor);
+    enviarMensajeAlServidorPorPOST(NombreServidor + "Usuario", respuestaServidor);
     //enviarMensajeAlServidorPorGET(NombreServidor, respuestaServidor);
 }
 
