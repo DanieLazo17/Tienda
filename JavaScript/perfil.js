@@ -13,7 +13,7 @@ function load(){
 
 function cambiarDestino() {
     var idDestino = $("destino").value;
-    enviarMensajeAlServidorPorGET(NombreServidor + "Mensaje/" + idDestino,cargarMensajesDestinos);
+    enviarMensajeAlServidorPorGET(NombreServidor + "Mensaje/Destino/" + idDestino,cargarMensajesDestinos);
 }
 
 function cargarOpcionesDestino(valor) {
