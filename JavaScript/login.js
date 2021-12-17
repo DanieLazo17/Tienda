@@ -51,11 +51,11 @@ function respuestaServidor(respuesta){
 
     var objetoUsuario = JSON.parse(respuesta);
 
-    if(objetoUsuario['nombre'] == null){
+    if(objetoUsuario.nombre == null){
         $("demo").innerHTML="Correo o contraseña errónea";
     }
 
-    if(objetoUsuario['nombre'] != null){
+    if(objetoUsuario.nombre != null){
         $("demo").innerHTML="Acceso correcto";
     }
 }
