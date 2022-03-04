@@ -1,7 +1,7 @@
 # Página de destinos turísticos desarrollada con HTML, CSS y JavaScript
 
 * Esta página se encuentra desarrollada parcialmente con JavaScript y AJAX
-* Su desarrollo completo está hecho en Angular. Link del repositorio https://github.com/DanieLazo17/pruebaAngular
+* Su desarrollo completo está hecho con el Framework Angular. Link al repositorio https://github.com/DanieLazo17/pruebaAngular
 
 ## Objetivos
 
